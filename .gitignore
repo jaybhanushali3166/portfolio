@@ -1,0 +1,13 @@
+# Project build & dependencies
+_site
+node_modules/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Tooling
+.claude
+.agents
+skills-lock.json

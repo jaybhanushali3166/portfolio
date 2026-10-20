@@ -1,0 +1,25 @@
+---
+layout: page.html
+title: Tags
+permalink: /tags/
+---
+
+<p class="tag-chips">
+{%- for item in collections.tagList -%}
+    <a href="#{{- item.name -}}" class="tag-chip">{{- item.name -}}&nbsp;({{ item.posts.size }})</a>
+{%- endfor -%}
+</p>
+
+{%- for item in collections.tagList -%}
+<section class="tag-group">
+    <h2 id="{{- item.name -}}">{{- item.name -}}</h2>
+    <ul>
+        {%- for post in item.posts -%}
+        <li>
+            <a href="{{ post.url | relative_url }}">{{- post.data.title | strip_html -}}</a>
+            <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: "%Y-%m-%d" -}}</time>
+        </li>
+        {%- endfor -%}
+    </ul>
+</section>
+{%- endfor -%}

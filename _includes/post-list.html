@@ -1,0 +1,16 @@
+{%- assign max = limit | default: include.limit | default: 999 -%}
+{%- assign posts = collections.posts | reverse -%}
+<ul class="rows">
+  {%- for post in posts limit: max %}
+  <li class="row">
+    <time class="row-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    <div class="row-body">
+      <p><a href="{{ post.url | relative_url }}">{{ post.data.title | default: post.title | strip_html }}</a></p>
+      {%- assign post_sub = post.data.subtitle | default: post.subtitle %}
+      {%- if post_sub %}
+      <p class="row-sub">{{ post_sub | strip_html }}</p>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ul>

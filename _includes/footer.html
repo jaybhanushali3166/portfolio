@@ -1,0 +1,18 @@
+{%- assign links = site.socialNetworkLinks %}
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <p class="foot-stmt-line">Want to talk tech or products? Let’s connect.</p>
+    {%- if links.email %}
+    <p class="foot-cta"><a class="pill" href="mailto:{{ links.email }}">Email me</a></p>
+    {%- endif %}
+    <div class="foot-meta">
+      <p>© {{ site.time | date: '%Y' }} {{ site.author }}</p>
+      <ul class="foot-links">
+        {%- if links.github %}<li><a href="https://github.com/{{ links.github }}">GitHub&nbsp;↗</a></li>{% endif %}
+        {%- if links.linkedin %}<li><a href="https://linkedin.com/in/{{ links.linkedin }}">LinkedIn&nbsp;↗</a></li>{% endif %}
+        {%- if links.email %}<li><a href="mailto:{{ links.email }}">Email</a></li>{% endif %}
+        <li><a href="{{ '/aboutme/' | relative_url }}">About</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

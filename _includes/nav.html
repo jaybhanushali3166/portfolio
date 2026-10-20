@@ -1,0 +1,13 @@
+<nav class="nav-pill fade" aria-label="Primary">
+  <a class="mark" href="{{ '/' | relative_url }}" aria-label="Jay Bhanushali, home">JB</a>
+  <ul>
+    {%- if page.url == '/' %}
+    <li><a href="#work">Work</a></li>
+    <li><a href="#writing">Writing</a></li>
+    {%- else %}
+    <li><a href="{{ '/#work' | relative_url }}">Work</a></li>
+    <li><a href="{{ '/blog/' | relative_url }}">Writing</a></li>
+    {%- endif %}
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>

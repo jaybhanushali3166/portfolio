@@ -1,0 +1,19 @@
+---
+layout: base.html
+---
+
+<div class="wrap page">
+  <header class="page-head">
+    <h1 class="page-title fade">{{ title | default: page.title | strip_html }}</h1>
+    {%- assign sub = subtitle | default: page.subtitle %}
+    {%- if sub %}
+    <p class="page-sub fade" style="--i:1">{{ sub | strip_html }}</p>
+    {%- endif %}
+  </header>
+
+  {{ content }}
+
+  <div class="fade" style="--i:2">
+    {% include post-list.html %}
+  </div>
+</div>

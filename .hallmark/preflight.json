@@ -1,0 +1,9 @@
+{
+  "scanned": "2026-10-20",
+  "framework": "Eleventy v3; GitHub Pages deploy via .github/workflows/deploy.yml",
+  "fonts_before": ["Lora", "Open Sans"],
+  "fonts_now": ["Fraunces", "Geist", "Geist Mono"],
+  "palette_before": "white page, #404040 text, #008AFF links (_config.yml)",
+  "motion": "none (CSS only)",
+  "design_md": false
+}

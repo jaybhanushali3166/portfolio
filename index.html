@@ -1,0 +1,41 @@
+---
+layout: base.html
+title: Jay Bhanushali
+description: Engineer, builder, learner. AI tools I've built and writing on how systems work.
+---
+
+<section class="marquee">
+  <h1 class="marquee-title fade" style="--i:1"><span>Jay</span><span>Bhanushali</span></h1>
+</section>
+
+<div class="below">
+  <div class="wrap">
+    <p class="intro fade" style="--i:2">Engineer, builder, learner. A few things I’ve built, and notes on how systems work.</p>
+
+    <section class="sect" id="work" aria-labelledby="work-title">
+      <h2 class="sect-title" id="work-title">Work</h2>
+      <div class="cards">
+        {%- for project in projects %}
+        <article class="card">
+          <h3 class="card-name">{{ project.name }}</h3>
+          <p class="card-summary">{{ project.summary }}</p>
+          <p class="card-meta">{{ project.meta }}</p>
+          {%- if project.links %}
+          <p class="card-links">
+            {%- for link in project.links %}
+            <a class="pill" href="{{ link.url }}">{{ link.label }}&nbsp;↗</a>
+            {%- endfor %}
+          </p>
+          {%- endif %}
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="sect" id="writing" aria-labelledby="writing-title">
+      <h2 class="sect-title" id="writing-title">Writing</h2>
+      {% include post-list.html limit=4 %}
+      <p class="more"><a href="{{ '/blog/' | relative_url }}">All writing&nbsp;→</a></p>
+    </section>
+  </div>
+</div>

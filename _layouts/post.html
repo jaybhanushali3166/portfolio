@@ -1,0 +1,38 @@
+---
+layout: base.html
+---
+
+<article class="wrap page">
+  <header class="page-head">
+    <h1 class="page-title fade">{{ title | default: page.title | strip_html }}</h1>
+    {%- assign sub = subtitle | default: page.subtitle %}
+    {%- if sub %}
+    <p class="page-sub fade" style="--i:1">{{ sub | strip_html }}</p>
+    {%- endif %}
+    <p class="page-meta fade" style="--i:2">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {%- for tag in tags %}
+      {%- if tag != 'posts' and tag != 'all' %}
+      <a href="{{ '/tags' | relative_url }}#{{ tag }}">{{ tag }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </p>
+  </header>
+
+  <div class="prose fade" style="--i:3">
+    {{ content }}
+  </div>
+
+  {%- assign prev = collections.posts | getPreviousCollectionItem: page -%}
+  {%- assign next = collections.posts | getNextCollectionItem: page -%}
+  {%- if prev.url or next.url %}
+  <nav class="pager" aria-label="More writing">
+    {%- if prev.url %}
+    <a class="pager-prev" href="{{ prev.url | relative_url }}">← {{ prev.data.title | strip_html }}</a>
+    {%- endif %}
+    {%- if next.url %}
+    <a class="pager-next" href="{{ next.url | relative_url }}">{{ next.data.title | strip_html }} →</a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+</article>

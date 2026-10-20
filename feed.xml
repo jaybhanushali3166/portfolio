@@ -1,0 +1,36 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    {% if site.title %}
+    <title>{{ site.title | xml_escape }}</title>
+    {% endif %}
+    {% if site.rssDescription %}
+    <description>{{ site.rssDescription | xml_escape }}</description>
+    {% endif %}
+    <link>{{ '/' | absolute_url }}</link>
+    <atom:link href="{{ 'feed.xml' | absolute_url }}" rel="self" type="application/rss+xml" />
+    {% assign excerpt_length = 50 %}
+    {% assign posts = collections.posts | reverse %}
+    {% for post in posts limit:20 %}
+      <item>
+        <title>{{ post.data.title | strip_html | xml_escape }}</title>
+        {% if post.data.author %}
+        <dc:creator><![CDATA[ {{ post.data.author | xml_escape }} ]]></dc:creator>
+        {% elsif site.author %}
+        <dc:creator><![CDATA[ {{ site.author | xml_escape }} ]]></dc:creator>
+        {% endif %}
+        <description>
+          {% if post.data.subtitle %}{{ post.data.subtitle | strip_html | xml_escape }} - {% endif %}
+          {{ post.templateContent | strip_html | xml_escape | truncatewords: excerpt_length }}
+        </description>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <link>{{ post.url | absolute_url }}</link>
+        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

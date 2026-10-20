@@ -1,0 +1,16 @@
+# Projects shown on the home page, in order. Add a new entry to add a project.
+# `links` is optional: each item needs a label and a url (url is indented under label, no dash).
+
+- name: Beyond Localhost
+  summary: Automates the making of short reels about system design concepts.
+  meta: Automation · AI · Video
+  links:
+    - label: Instagram
+      url: https://www.instagram.com/beyond.localhost
+
+- name: Ripple
+  summary: A graph-based AI agent product, built for a hackathon.
+  meta: Hackathon · Graph · AI agents
+  links:
+    - label: Live site
+      url: https://ripple-graph-hackathon.onrender.com/
