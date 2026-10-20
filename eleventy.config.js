@@ -24,6 +24,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("tokens.css");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy(".nojekyll");
 
   // LiquidJS options
   eleventyConfig.setLiquidOptions({
