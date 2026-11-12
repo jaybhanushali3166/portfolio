@@ -105,8 +105,6 @@ a:focus-visible, a.is-focus {
 /* ── Home · Marquee hero ─────────────────────────────────────────────── */
 
 .marquee {
-  position: relative;
-  overflow: hidden;
   min-height: 80svh;
   display: flex;
   align-items: flex-end;
@@ -116,41 +114,6 @@ a:focus-visible, a.is-focus {
     var(--color-paper);
 }
 
-.thinking-orb-wrap {
-  position: absolute;
-  top: clamp(2.5rem, 10vh, 5.5rem);
-  right: clamp(2rem, 9vw, 8rem);
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  pointer-events: auto;
-  user-select: none;
-  cursor: default;
-}
-
-#thinking-orb-canvas {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  pointer-events: auto;
-}
-
-@media (max-width: 640px) {
-  .thinking-orb-wrap {
-    top: 1.5rem;
-    right: 1.25rem;
-    width: 140px;
-    height: 140px;
-  }
-  #thinking-orb-canvas {
-    width: 140px;
-    height: 140px;
-  }
-}
 .marquee-title {
   margin: 0;
   min-width: 0;
