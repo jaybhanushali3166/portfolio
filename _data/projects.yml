@@ -14,3 +14,10 @@
   links:
     - label: Live site
       url: https://ripple-graph-hackathon.onrender.com/
+
+- name: CV Builder
+  summary: A web application to build, customize, and export clean, professional resumes and CVs.
+  meta: Web · Svelte · TypeScript
+  links:
+    - label: GitHub
+      url: https://github.com/jaybhanushali3166/cv-builder
