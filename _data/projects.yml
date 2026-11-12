@@ -15,9 +15,9 @@
     - label: Live site
       url: https://ripple-graph-hackathon.onrender.com/
 
-- name: CV Builder
-  summary: A web application to build, customize, and export clean, professional resumes and CVs.
-  meta: Web · Svelte · TypeScript
+- name: FolioTweak
+  summary: AI-powered tool to tailor your resume to any job description with reviewable changes and multiple export formats.
+  meta: Product · AI · Resume
   links:
-    - label: GitHub
-      url: https://github.com/jaybhanushali3166/cv-builder
+    - label: Live site
+      url: https://foliotweak.com
